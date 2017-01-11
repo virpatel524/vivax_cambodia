@@ -1,0 +1,12 @@
+
+python /home/vdp5/source_code/fastStructure/structure.py --output=/home/vdp5/projects/vivax_cambodia/data/structure_out/pvmdr1/pvmdr1_structure --input=/home/vdp5/projects/vivax_cambodia/data/plink_test/plink -K 2 
+python /home/vdp5/source_code/fastStructure/structure.py --output=/home/vdp5/projects/vivax_cambodia/data/structure_out/pvmdr1/pvmdr1_structure --input=/home/vdp5/projects/vivax_cambodia/data/plink_test/plink -K 3 
+python /home/vdp5/source_code/fastStructure/structure.py --output=/home/vdp5/projects/vivax_cambodia/data/structure_out/pvmdr1/pvmdr1_structure --input=/home/vdp5/projects/vivax_cambodia/data/plink_test/plink -K 4 
+python /home/vdp5/source_code/fastStructure/structure.py --output=/home/vdp5/projects/vivax_cambodia/data/structure_out/pvmdr1/pvmdr1_structure --input=/home/vdp5/projects/vivax_cambodia/data/plink_test/plink -K 5 
+python /home/vdp5/source_code/fastStructure/structure.py --output=/home/vdp5/projects/vivax_cambodia/data/structure_out/pvmdr1/pvmdr1_structure --input=/home/vdp5/projects/vivax_cambodia/data/plink_test/plink -K 6 
+python /home/vdp5/source_code/fastStructure/structure.py --output=/home/vdp5/projects/vivax_cambodia/data/structure_out/pvmdr1/pvmdr1_structure --input=/home/vdp5/projects/vivax_cambodia/data/plink_test/plink -K 7 
+python /home/vdp5/source_code/fastStructure/structure.py --output=/home/vdp5/projects/vivax_cambodia/data/structure_out/pvmdr1/pvmdr1_structure --input=/home/vdp5/projects/vivax_cambodia/data/plink_test/plink -K 8 
+python /home/vdp5/source_code/fastStructure/structure.py --output=/home/vdp5/projects/vivax_cambodia/data/structure_out/pvmdr1/pvmdr1_structure --input=/home/vdp5/projects/vivax_cambodia/data/plink_test/plink -K 9 
+python /home/vdp5/source_code/fastStructure/structure.py --output=/home/vdp5/projects/vivax_cambodia/data/structure_out/pvmdr1/pvmdr1_structure --input=/home/vdp5/projects/vivax_cambodia/data/plink_test/plink -K 10 
+python /home/vdp5/source_code/fastStructure/structure.py --output=/home/vdp5/projects/vivax_cambodia/data/structure_out/pvmdr1/pvmdr1_structure --input=/home/vdp5/projects/vivax_cambodia/data/plink_test/plink -K 11 
+python /home/vdp5/source_code/fastStructure/structure.py --output=/home/vdp5/projects/vivax_cambodia/data/structure_out/pvmdr1/pvmdr1_structure --input=/home/vdp5/projects/vivax_cambodia/data/plink_test/plink -K 12 
