@@ -67,3 +67,5 @@ Ran PCVScan  w/ OM339, output is in cnv_data/pcnv_om339.txt. Concerned about the
 
 Also running the annotated_faststructure_run.sh with another gene of interest to see if its genetic structure output is similar to those seen before, this will reveal whether or not fastStructure is even a good idea in the first place.
 
+###2017-01-11T15:51:40
+Also ran fastStructure uisng PVP01_1259000 as the gene of interest, its variants divided into five different zones but did so differently. Figures are in the distruct folder
