@@ -69,3 +69,8 @@ Also running the annotated_faststructure_run.sh with another gene of interest to
 
 ###2017-01-11T15:51:40
 Also ran fastStructure uisng PVP01_1259000 as the gene of interest, its variants divided into five different zones but did so differently. Figures are in the distruct folder
+
+###2017-01-14T19:00:23
+Downloaded sequences for PVT01 and PVC01. One limiting factor is that there are not contigs for these. I will try searching.
+
+Found them by looking at all nucleotides. I have put FASTA and GB files for all in reference_genomes general data folder

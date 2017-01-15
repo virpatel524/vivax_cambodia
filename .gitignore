@@ -1,6 +1,8 @@
-data/sequences_pileup_edited/
-data/sequences_samtools_pileup/
-data/sequences_bam/
-data/merged_vcf_snp/
-data/merged_vcf_snp/
-data/structure_out/
+/data/sequences_pileup_edited/
+/data/sequences_samtools_pileup/
+/data/sequences_bam/
+/data/merged_vcf_snp/
+/data/merged_vcf_snp/
+/data/lumpy/
+data/testing_mapping_quality/
+data/structure_out/**
