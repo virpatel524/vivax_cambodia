@@ -1,0 +1,18 @@
+PLINK v1.90b3.44 64-bit (17 Nov 2016)
+Options in effect:
+  --allow-extra-chr
+  --double-id
+  --out ../data/plink_output/PVP01_1447300_plink
+  --vcf ../data/merged_vcf_snp/extracted_vcf/PVP01_1447300_extracted.vcf.ann
+
+Hostname: wraylab01.genome.duke.edu
+Working directory: /home/vdp5/projects/vivax_cambodia/scripts
+Start time: Tue Jan 17 10:33:57 2017
+
+Random number seed: 1484667237
+32012 MB RAM detected; reserving 16006 MB for main workspace.
+--vcf: ../data/plink_output/PVP01_1447300_plink.bed +
+../data/plink_output/PVP01_1447300_plink.bim +
+../data/plink_output/PVP01_1447300_plink.fam written.
+
+End time: Tue Jan 17 10:33:57 2017

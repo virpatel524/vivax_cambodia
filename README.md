@@ -74,3 +74,11 @@ Also ran fastStructure uisng PVP01_1259000 as the gene of interest, its variants
 Downloaded sequences for PVT01 and PVC01. One limiting factor is that there are not contigs for these. I will try searching.
 
 Found them by looking at all nucleotides. I have put FASTA and GB files for all in reference_genomes general data folder
+
+###2017-01-17T10:22:00
+Aligned OM270 to all of these, using the following settings:
+bwa, bowtie, bowtie --dovetail
+
+Of these, bwa provided the best alignment on the PVP01.
+
+I still want to see if I can get the Recurse script to run, however. 
