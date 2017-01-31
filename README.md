@@ -81,4 +81,38 @@ bwa, bowtie, bowtie --dovetail
 
 Of these, bwa provided the best alignment on the PVP01.
 
-I still want to see if I can get the Recurse script to run, however. 
+I still want to see if I can get the Recurse script to run, however.
+
+###2017-01-22T11:20:21
+Nick says the SRA data online is the best, so I've downloadeed this for all samples. Converted into appropraite fastq and redid naming, now am running bwa alignments using PVP01 on those.
+
+Downloading Thai samples as well, should I run alignments based on PVT01?
+
+Question remains as to whether I should merge the MiSeq and HiSeq files. Doing so might introduce bias during variant analysis since read preparation may have been different.
+
+###2017-01-22T14:46:24
+Interesting paper that identifies prodrug actvity and LOF mutations as key mechanism of resistance, wonder whether these mutations are already present in Vivax (soft sweep versus hard sweep) papers3://publication/doi/10.1038/ncomms14240
+
+###2017-01-23T15:34:14
+Had issues with I/O, so I was forced to restart alignment process. Download process was stopped for the extra samples due to a concern.
+
+###2017-01-23T17:18:10
+Looking into structural variations for the few that we have so far. Snowman didn't reveal anyting interesting, plus it was very hard to understand (used BB012). Now I am attempting the CNView.R approach.
+
+Essentially, for now, we're going to use 10 samples as a test. For each BAM created, I'm making a BED file in the cover data folder and will create a corresponding makewindows file which will be binned in 100 segments (I figure go big or go home right now since this will be a bit computaitonally slow).
+
+###2017-01-24T10:20:25
+Updated script for NYU_pipeline.sh Major requirement for modularity is that the sample name is first, followed by an underscore.
+
+Testing right now with BB012 to verify that it works while alignmetns are finishing up.
+
+Was also wroking on the CNView.R script, which bascially wants a bedtools coverage combined approach. Only problem is that their recommended processing  pipeline (bedtools coverage + unionBedGraph)  does not work too well, so I'm constructing a script that can hopefully do better.
+
+script called /home/vdp5/projects/vivax_cambodia/scripts/cnvview/combine_scripts.py.
+
+
+###2017-01-26T10:24:11
+Called NYU_pipeline again last night, modifying to include set plotidy as 1. Will take more tiem, unfortuantely. Downloading the other sample data uisng the same script, hopefully there is not antoehr size issue.
+
+###2017-01-31T10:14:35
+Finally finished variant calling!! Doing analysis today. 

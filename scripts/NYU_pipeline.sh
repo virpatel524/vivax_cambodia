@@ -3,10 +3,24 @@
 ref="/home/vdp5/data/reference_genomes/PVP01.fasta"
 
 
+function disbgzip()
+{
+    for alpha in $1/*final_variants*.vcf; do
+        bgzip $alpha
+    done
+}
+
+function distabix()
+{
+    for alpha in $1/*final_variants*.vcf.gz; do
+        tabix -p vcf $alpha
+    done
+}
+
 
 function AddOrReplaceReadGroups ()
 {
-	java -jar /home/vdp5/source_code/picard.jar AddOrReplaceReadGroups INPUT=$1 OUTPUT=readgroups.bam RGID=1 RGLB=Juliano_vivax RGPL=illumina RGPU=unit1 RGSM=Juliano_vivax
+	java -jar /home/vdp5/source_code/picard.jar AddOrReplaceReadGroups INPUT=$1 OUTPUT=readgroups.bam RGID=1 RGLB=$base RGPL=illumina RGPU=unit1 RGSM=$base
 
 }
 function CollectInsertSizeMetrics ()
@@ -41,7 +55,7 @@ java -jar /home/vdp5/source_code/GenomeAnalysisTK.jar -T IndelRealigner -R $ref 
 
 function HaplotypeCaller ()
 {
-	java -jar /home/vdp5/source_code/GenomeAnalysisTK.jar -T HaplotypeCaller -R $ref -I realigned_reads.bam -o raw_variants.vcf
+	java -jar /home/vdp5/source_code/GenomeAnalysisTK.jar -T HaplotypeCaller -ploidy 1 -R $ref -I realigned_reads.bam -o raw_variants.vcf
 
 }
 
@@ -84,7 +98,7 @@ function PrintReads ()
 
 function HaplotypeCaller2 ()
 {
-	java -jar /home/vdp5/source_code/GenomeAnalysisTK.jar -T HaplotypeCaller -R $ref -I recal_reads.bam -o raw_variants_recal.vcf
+	java -jar /home/vdp5/source_code/GenomeAnalysisTK.jar -T HaplotypeCaller -ploidy 1 -R $ref -I recal_reads.bam -o raw_variants_recal.vcf
 
 }
 
@@ -101,14 +115,22 @@ function VariantFiltration2 ()
 {
 	java -jar /home/vdp5/source_code/GenomeAnalysisTK.jar -T VariantFiltration -R $ref -V raw_snps_recal.vcf --filterExpression 'QD < 2.0 || FS > 60.0 || MQ < 40.0 || MQRankSum < -12.5 || ReadPosRankSum < -8.0 || SOR > 4.0' --filterName "basic_snp_filter" -o filtered_snps_final.vcf
 	java -jar /home/vdp5/source_code/GenomeAnalysisTK.jar -T VariantFiltration -R $ref -V raw_indels_recal.vcf --filterExpression 'QD < 2.0 || FS > 200.0 || ReadPosRankSum < -20.0 || SOR > 10.0' --filterName "basic_indel_filter" -o filtered_indels_recal.vcf
-
+	java -jar /home/vdp5/source_code/GenomeAnalysisTK.jar -T SelectVariants -R $ref -V filtered_snps_final.vcf -ef -o snp_final_variants_${base}.vcf
+	java -jar /home/vdp5/source_code/GenomeAnalysisTK.jar -T SelectVariants -R $ref -V filtered_indels_recal.vcf -ef -o indel_final_variants_${base}.vcf
+	disbgzip .
+	distabix .
+	vcf-merge snp_final_variants_${base}.vcf.gz indel_final_variants_${base}.vcf.gz > ../../variant_files/${base}_variants.vcf
+	rm -rf *
 }
 
 
 
 
 
-base=$(basename $1)
+zeta=$(basename $1)
+IFS='_' read -ra ADDR <<< $zeta
+base=${ADDR[0]}
+
 touch /home/vdp5/projects/vivax_cambodia/logs/nyu_run.log_${base}
 logfle=/home/vdp5/projects/vivax_cambodia/logs/nyu_run.log_${base}
 cd /home/vdp5/projects/vivax_cambodia/data/nyu_pipeline_results
@@ -116,7 +138,7 @@ mkdir $base
 cd $base
 CollectInsertSizeMetrics $1
 echo "CollectInsertSizeMetrics" >> $logfle
-AddOrReplaceReadGroups $1
+AddOrReplaceReadGroups $1 $base
 echo "AddOrReplaceReadGroups" >> $logfle
 MarkDuplicates
 echo "MarkDuplicates" >> $logfle

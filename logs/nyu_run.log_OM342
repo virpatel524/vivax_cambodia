@@ -1,0 +1,15 @@
+CollectInsertSizeMetrics
+AddOrReplaceReadGroups
+MarkDuplicates
+BuildBamIndex
+RealignerTargetCreator
+IndelRealigner
+HaplotypeCaller
+SelectVariants
+VariantFiltration
+BaseRecalibrator
+AnalyzeCovariates
+PrintReads
+HaplotypeCaller2
+SelectVariants2
+VariantFiltration2
