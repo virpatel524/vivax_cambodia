@@ -115,4 +115,10 @@ script called /home/vdp5/projects/vivax_cambodia/scripts/cnvview/combine_scripts
 Called NYU_pipeline again last night, modifying to include set plotidy as 1. Will take more tiem, unfortuantely. Downloading the other sample data uisng the same script, hopefully there is not antoehr size issue.
 
 ###2017-01-31T10:14:35
-Finally finished variant calling!! Doing analysis today. 
+Finally finished variant calling!! Doing analysis today.
+
+###2017-02-07T09:16:27
+Second iteration of variant calling completed today, clear there's a bias with multiplicity of infection. Some variant calls are just too low in terms of file size, so we'll have to resolve this issue going forward to make sure there isn't any propogation of bias.
+
+For now, I'm just deleting these from the repository, and combining the existing files for a master set. Deleted variants are documented in other/deleted_variants_2.7.17.
+

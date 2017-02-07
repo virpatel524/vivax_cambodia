@@ -55,7 +55,7 @@ java -jar /home/vdp5/source_code/GenomeAnalysisTK.jar -T IndelRealigner -R $ref 
 
 function HaplotypeCaller ()
 {
-	java -jar /home/vdp5/source_code/GenomeAnalysisTK.jar -T HaplotypeCaller -ploidy 1 -R $ref -I realigned_reads.bam -o raw_variants.vcf
+	java -jar /home/vdp5/source_code/GenomeAnalysisTK.jar -T HaplotypeCaller -nct 4  -R $ref -I realigned_reads.bam -o raw_variants.vcf
 
 }
 
@@ -98,7 +98,7 @@ function PrintReads ()
 
 function HaplotypeCaller2 ()
 {
-	java -jar /home/vdp5/source_code/GenomeAnalysisTK.jar -T HaplotypeCaller -ploidy 1 -R $ref -I recal_reads.bam -o raw_variants_recal.vcf
+	java -jar /home/vdp5/source_code/GenomeAnalysisTK.jar -T HaplotypeCaller -nct 4  -R $ref -I recal_reads.bam -o raw_variants_recal.vcf
 
 }
 
